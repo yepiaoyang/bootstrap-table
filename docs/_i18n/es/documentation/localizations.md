@@ -6,7 +6,8 @@
        data-toggle="table"
        data-search="true"
        data-show-toggle="true"
-       data-show-columns="true">
+       data-show-columns="true"
+       data-mobile-responsive="true">
     <thead>
     <tr>
         <th>Nombre</th>
@@ -54,6 +55,11 @@
         <td>formatColumns</td>
         <td>-</td>
         <td>'Columns'</td>
+    </tr>
+	<tr>
+        <td>formatAllRows</td>
+        <td>--/td>
+        <td>'All'</td>
     </tr>
     </tbody>
 </table>

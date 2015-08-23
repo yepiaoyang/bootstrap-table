@@ -1,17 +1,81 @@
 ## ChangeLog
 
+### 1.8.2
+
+- [enh] Update bootstrap-table-cookie.js.
+- [enh] Use options for detailView's open/close icons.
+- [enh] Added `refreshOptions` and `gtHiddenColumns` method.
+- [enh] Added `datepicker` option to Filter Control.
+- [bug] Fix #936 Sort carets shouldn't be inline-styled by JS.
+- [bug] Fix table header width bug when setting table to no bordered.
+- [bug] Fix #938, fix #940: Multiple Sort and Hide/Show column.
+- [bug] Fix #970: click and dblclick bug on no-rows table.
+- [bug] Fix #967: unselected column while column sorted display error.
+
+### 1.8.1
+
+- [enh] Accessing field name in formatter.
+- [enh] Improve function option to support string format for example formatter.
+- [enh] Added multiple sort extension.
+- [enh] Improve filter control extension.
+- [enh] Added jsdelivr CDN.
+- [bug] Fix #912: Bug when switching to card view.
+- [bug] Fix #914: extra empty toolbar div bug.
+- [bug] Fix bootstrap-table-pt-PT.js typo.
+
+### 1.8.0
+
+- [enh] Added state saving for visible columns and the ability to use extension with multiple simultaneous tables.
+- [enh] Added `ajax` option to replace jquery ajax method.
+- [enh] Added `resetWidth` method to reset header and footer width.
+- [enh] Added key-events, mobile, filter-control, reorder-columns, reorder-rows, resizable, natural-sorting, toolbar extensions, and update the extensions name.
+- [enh] Added `onToggle`, `onCheckSome` and `onUncheckSome` events.
+- [enh] Added `getScrollPosition`, `removeAll`, `removeByUniqueId` methods.
+- [bug] Fix double header bug after table show from hidden.
+- [bug] Fix #279: scrollWidth bug.
+- [enh] `getData` method support to get the current page data.
+- [enh] Added 'getAllSelections' method to get checked rows across all pages.
+- [enh] Added `ro-RO` locale.
+- [enh] Added `table-no-bordered` class to remove table-bordered style.
+- [enh] Added `bootstrap-table-all.js` and `bootstrap-table-locale-all.js` files to dist.
+- [enh] Added detail view feature.
+- [enh] Added `updateCell` method.
+- [enh] Added `onClickCell` and `onDblClickCell` events.
+- [bug] Fix #672: Column Fixed Width in Percentage bug.
+- [bug] Fix row state field value bug when there are disabled rows.
+- [bug] Fix #762: save tr's data-* attributes.
+- [bug] Fix #823, #850: break rowspan bug, data-attribute bug.
+
+### 1.7.0
+
+- [enh] Add `showFooter`, `keyEvents`, `searchText` and `uniqueId` options.
+- [enh] Add `cardVisible` column options.
+- [enh] Add `checkBy` and `uncheckBy`, `showRow` and `hideRow` and `getRowsHidden` methods.
+- [enh] Add nb-NO, ar-SA, es-MX, ka-GE locales.
+- [enh] Add cookie, resizable, natural-sorting, toolbar extensions.
+- [enh] Add exportOptions to export extension.
+- [enh] Fix #263: prepend method support object and array.
+- [enh] Card View support checkbox and radio.
+- [bug] Fix Card View events bug.
+- [enh] Keep all `data-*` attributes when transform from normal table.
+- [enh] Load method support fixedScroll param.
+- [enh] Added 'all' option in pagination.
+- [enh] Added pagination detail align.
+
 ### 1.6.0
 
 - [bug] Fix queryParams bug when use `sidePagination='server'`.
 - [enh] Add uk-UA, sv-SE, pt-PT, ms-MY, ja-JP locales.
 - [enh] Add `searchTimeOut` option.
 - [bug] Fix #220: state column hideColumn bug.
+- [bug] Fix #221: cellStyle bug.
 - [enh] Add `iconsPrefix` and `icons` options to support custom icons.
 - [enh] Add i18n support for docs.
 - [enh] Allow `query` params to be specified during refresh.
 - [bug] Fix bug of ellipsis string.
 - [bug] Fix pageList smartDisplay.
 - [bug] Fix #188: Export Button is not shown only use `showExport=true`.
+- [bug] Fix page-change event params bug.
 - [enh] Add limit and offset params only if pagination is activated.
 - [enh] Add `ajaxOptions` option to custom $.ajax options.
 - [enh] Add a toggle pagination toolbar button.
@@ -19,6 +83,7 @@
 - [enh] Add `buttonsAlign` option and update `toolbarAlign` option.
 - [enh] Add `prepend`, `insertRow` and `toggleView` methods.
 - [enh] Add `editable-save.bs.table` event to editatble extension.
+- [enh] #431: load method support pagination.
 
 ### 1.5.0
 

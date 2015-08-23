@@ -8,7 +8,8 @@ Las opciones de la tabla están definidas en `jQuery.fn.bootstrapTable.defaults`
        data-toggle="table"
        data-search="true"
        data-show-toggle="true"
-       data-show-columns="true">
+       data-show-columns="true"
+       data-mobile-responsive="true">
     <thead>
     <tr>
         <th>Nombre</th>
@@ -205,7 +206,7 @@ Las opciones de la tabla están definidas en `jQuery.fn.bootstrapTable.defaults`
         <td>pageList</td>
         <td>data-page-list</td>
         <td>Array</td>
-        <td>[10, 25, 50, 100]</td>
+        <td>[10, 25, 50, 100, All]</td>
         <td>Cuando se habilita la paginación, inicializa la lista de cantidad de registros por página.</td>
     </tr>
     <tr>
@@ -230,6 +231,20 @@ Las opciones de la tabla están definidas en `jQuery.fn.bootstrapTable.defaults`
         <td>Habilita el campo para búsqueda.</td>
     </tr>
     <tr>
+        <td>strictSearch</td>
+        <td>data-strict-search</td>
+        <td>Boolean</td>
+        <td>false</td>
+        <td>Habilita la busqueda exacta.</td>
+    </tr>
+	<tr>
+        <td>searchText</td>
+        <td>data-search-text</td>
+        <td>String</td>
+        <td>''</td>
+        <td>Inicializa el campo de búsqueda con el texto especificado.</td>
+    </tr>
+    <tr>
         <td>searchTimeOut</td>
         <td>data-search-time-out</td>
         <td>Number</td>
@@ -244,6 +259,13 @@ Las opciones de la tabla están definidas en `jQuery.fn.bootstrapTable.defaults`
         <td>False para ocultar el encabezado de la tabla.</td>
     </tr>
     <tr>
+        <td>showFooter</td>
+        <td>data-show-footer</td>
+        <td>Boolean</td>
+        <td>false</td>
+        <td>True para mostrar el footer.</td>
+    </tr>
+	<tr>
         <td>showColumns</td>
         <td>data-show-columns</td>
         <td>Boolean</td>
@@ -286,11 +308,32 @@ Las opciones de la tabla están definidas en `jQuery.fn.bootstrapTable.defaults`
         <td>Indica cuál campo es el identificador.</td>
     </tr>
     <tr>
+        <td>uniqueId</td>
+        <td>data-unique-id</td>
+        <td>String</td>
+        <td>undefined</td>
+        <td>Indica un único id para cada fila.</td>
+    </tr>
+    <tr>
         <td>cardView</td>
         <td>data-card-view</td>
         <td>Boolean</td>
         <td>false</td>
         <td>True para mostrar la vista de tarjeta, por ejemplo en móviles.</td>
+    </tr>
+    <tr>
+        <td>detailView</td>
+        <td>data-detail-view</td>
+        <td>Boolean</td>
+        <td>false</td>
+        <td>True para mostrar la vista detalle en la tabla.</td>
+    </tr>
+    <tr>
+        <td>detailFormatter</td>
+        <td>data-detail-formatter</td>
+        <td>Function</td>
+        <td>function(index, row) {<br>return '';<br>}</td>
+        <td>Formatee su vista detalle cuando <code>detailView</code> está seteada en <code>true</code>.</td>
     </tr>
     <tr>
         <td>searchAlign</td>
@@ -312,6 +355,55 @@ Las opciones de la tabla están definidas en `jQuery.fn.bootstrapTable.defaults`
         <td>String</td>
         <td>'left'</td>
         <td>Indica cómo alinear la barra de herramientas customizable. Se puede usar 'left', 'right'.</td>
+    </tr>
+    <tr>
+        <td>paginationVAlign</td>
+        <td>data-pagination-v-align</td>
+        <td>String</td>
+        <td>'bottom'</td>
+        <td>Indica cómo alinear la paginación. Se puede usar: 'top', 'bottom', 'both' (coloca la paginación arriba y abajo de la tabla.</td>
+    </tr>
+	<tr>
+        <td>paginationHAlign</td>
+        <td>data-pagination-h-align</td>
+        <td>String</td>
+        <td>'right'</td>
+        <td>Indica cómo alinear la paginación. Se puede usar: 'left', 'right'.</td>
+    </tr>
+    <tr>
+        <td>paginationDetailHAlign</td>
+        <td>data-pagination-detail-h-align</td>
+        <td>String</td>
+        <td>'left'</td>
+        <td>Indica cómo alinear el detalle de la paginación. Se puede usar: 'left', 'right'.</td>
+    </tr>
+    <tr>
+        <td>paginationFirstText</td>
+        <td>data-pagination-first-text</td>
+        <td>String</td>
+        <td>'&lt;&lt;'</td>
+        <td>Indica el icono o el texto a mostrar en la paginación, el botón first del detalle de la paginación.</td>
+    </tr>
+    <tr>
+        <td>paginationPreText</td>
+        <td>data-pagination-pre-text</td>
+        <td>String</td>
+        <td>'&lt;'</td>
+        <td>Indica el icono o el texto a mostrar en la paginación, el botón previous del detalle de la paginación.</td>
+    </tr>
+    <tr>
+        <td>paginationNextText</td>
+        <td>data-pagination-next-text</td>
+        <td>String</td>
+        <td>'&gt;'</td>
+        <td>Indica el icono o el texto a mostrar en la paginación, el botón next del detalle de la paginación.</td>
+    </tr>
+    <tr>
+        <td>paginationLastText</td>
+        <td>data-pagination-last-text</td>
+        <td>String</td>
+        <td>'&gt;&gt;'</td>
+        <td>Indica el icono o el texto a mostrar en la paginación, el botón last del detalle de la paginación.</td>
     </tr>
     <tr>
         <td>clickToSelect</td>
@@ -354,6 +446,13 @@ Las opciones de la tabla están definidas en `jQuery.fn.bootstrapTable.defaults`
         <td>Boolean</td>
         <td>true</td>
         <td>False para deshabilitar el ordenamiento en todas las columnas.</td>
+    </tr>
+    <tr>
+        <td>silentSort</td>
+        <td>data-silent-sort</td>
+        <td>Boolean</td>
+        <td>true</td>
+        <td>Setear a <code>false</code> para ordenar los datos silenciosamente. Esta opción funciona cuando la opción sidePagination es seteada a <code>server</code>.</td>
     </tr>
     <tr>
         <td>rowStyle</td>
